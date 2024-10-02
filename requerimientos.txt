@@ -1,0 +1,51 @@
+Simulación del ciclo de vida de desarrollo de software:
+
+● Se proporcionarán requerimientos de un proyecto simulado y se pedirá a los estudiantes 
+que lo desarrollen siguiendo los pasos del proceso de desarrollo de software.
+● Los estudiantes deberán documentar cada fase del ciclo de vida para el proyecto simulado.
+● Caso práctico: 
+Desarrollar un proyecto sencillo para una empresa de turismo que ofrece: 
+1. Excursiones // Funcionalidad de una clase llamada Excursion
+2. Comidas
+3. Alojamientos
+La idea es que los usuarios puedan inscribirse en estas actividades 
+y el sistema les confirmará si hay cupos disponibles.
+
+Metodo Registrarse para el usuario, Metodo Enviar mensaje de confirmación
+Clase Excursion 
+Atributos: ID, Cupos, NombreExcursion, Duración, Descripción  
+Metodos: Registrarse(), AnularRegistro(), EnviarMensaje().
+
+Clase Comida:
+
+Clase Alojamientos:
+
+Clase Cliente:
+
+Clase Admin: 
+
+Empresa de Turismo "Aventura Extrema"
+La empresa ofrece tres servicios:
+1. Excursiones: Caminar por montañas, visitar ríos,
+etc.
+2. Comidas: Almuerzos y cenas tradicionales
+después de las excursiones.
+3. Alojamientos: Dormir en cabañas cercanas a la
+naturaleza.
+El sistema funciona así:
+● Los usuarios se registran para usar los servicios.
+● Cuando un usuario quiere reservar una excursión,
+comida o alojamiento, el sistema revisa si hay
+cupos disponibles.
+● Si hay cupos, el sistema les permitirá hacer la
+reserva y enviará un mensaje de confirmación.
+● Si no hay cupos, el sistema enviará un mensaje
+avisando que no hay cupos disponibles.
+
+● Pantalla de registro: Los usuarios deberán registrarse con su nombre y correo electrónico.
+● Pantalla de reserva: Mostrarán las opciones de excursión, comida y alojamiento disponibles.
+● Confirmación de cupos: Si hay cupos disponibles, el sistema les permitirá registrarse 
+y enviará un mensaje confirmando la solicitud, Si no hay cupos, informará que están agotados.
+● Mensaje de confirmación: Crear un mensaje simple que diga algo como "¡Gracias por tu reserva!".
+● Después de la actividad, los estudiantes deberán mostrar sus prototipos a otros equipos para recibir comentarios.
+Con base en este feedback, cada equipo debe mejorar su prototipo.
