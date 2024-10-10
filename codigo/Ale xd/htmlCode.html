@@ -40,40 +40,38 @@
                     <p>Dormir en cabañas cercanas a la naturaleza.</p>
                 </div>
                 <div class="servicio-imagenes">
-                    <img src="Alojamiento.png" alt="Alojamiento 1" class="servicio-imagen">
-                    <img src="Alojamiento2.png" alt="Alojamiento 2" class="servicio-imagen">
-                    <img src="Alojamiento3.png" alt="Alojamiento 3" class="servicio-imagen">
+                    <img src="alojamiento3.png" alt="Alojamiento" class="servicio-imagen">
                 </div>
             </div>
         </section>
 
         <section id="registro">
             <h2>Registro de Usuario</h2>
-            <form id="registroForm" action="registrar_usuario.php" method="POST">
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Contraseña" required>
+            <form id="registroForm">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
                 <button type="submit">Registrarse</button>
             </form>
         </section>
 
         <section id="reservas">
             <h2>Hacer una Reserva</h2>
-            <form id="reservaForm" action="hacer_reserva.php" method="POST">
-                <select id="tipoServicio" required>
+            <form id="reservaForm">
+                <select id="tipoServicio" name="tipoServicio" required>
                     <option value="">Seleccione un servicio</option>
                     <option value="excursion">Excursión</option>
                     <option value="comida">Comida</option>
                     <option value="alojamiento">Alojamiento</option>
                 </select>
-                <input type="date" id="fechaReserva" required>
+                <input type="date" id="fechaReserva" name="fechaReserva" required>
                 <button type="submit">Reservar</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Aventura Extrema. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Aventura Extrema. Todos los derechos reservados para el aleesito juasjuas.</p>
     </footer>
 
     <script src="jsCode.js"></script>

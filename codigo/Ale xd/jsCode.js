@@ -1,50 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const registroForm = document.getElementById('registroForm');
-    const reservaForm = document.getElementById('reservaForm');
+    const forms = {
+        registro: document.getElementById('registroForm'),
+        reserva: document.getElementById('reservaForm')
+    };
 
-    registroForm.addEventListener('submit', function(e) {
+    const urls = {
+        registro: 'phpRegistroUsuarioCode.php',
+        reserva: 'phpReservas.php'
+    };
+
+    function enviarFormulario(e) {
         e.preventDefault();
-        const formData = new FormData(registroForm);
-        fetch('registrar_usuario.php', {
-            method: 'POST',
-            body: formData
+        const formData = new FormData(this);
+        const url = urls[this.id.replace('Form', '')];
+
+        console.log('Enviando solicitud a:', url); // Depuración
+
+        fetch(url, { 
+            method: 'POST', 
+            body: formData 
         })
-        .then(response => response.text())
+        .then(response => {
+            console.log('Respuesta recibida:', response); // Depuración
+            if (!response.ok) {
+                throw new Error('Error en la respuesta del servidor: ' + response.status);
+            }
+            return response.text();
+        })
         .then(data => {
+            console.log('Datos recibidos:', data); // Depuración
             alert(data);
-            registroForm.reset();
+            this.reset();
         })
-        .catch(error => console.error('Error:', error));
-    });
+        .catch(error => {
+            console.error('Error detallado:', error); // Depuración mejorada
+            alert('Hubo un error al procesar tu solicitud. Por favor, intenta de nuevo.');
+        });
+    }
 
-    reservaForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = new FormData(reservaForm);
-        fetch('hacer_reserva.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            alert(data);
-            reservaForm.reset();
-        })
-        .catch(error => console.error('Error:', error));
-    });
-
-    const alojamientoServicio = document.getElementById('alojamiento-servicio');
-    const alojamientoContenido = alojamientoServicio.querySelector('.servicio-contenido');
-    const alojamientoImagenes = alojamientoServicio.querySelector('.servicio-imagenes');
-
-    alojamientoServicio.addEventListener('mouseenter', function() {
-        alojamientoContenido.style.opacity = '0';
-        alojamientoImagenes.style.opacity = '1';
-    });
-
-    alojamientoServicio.addEventListener('mouseleave', function() {
-        alojamientoContenido.style.opacity = '1';
-        alojamientoImagenes.style.opacity = '0';
-    });
+    Object.values(forms).forEach(form => form.addEventListener('submit', enviarFormulario));
 });
 
 function mostrarPromocion() {

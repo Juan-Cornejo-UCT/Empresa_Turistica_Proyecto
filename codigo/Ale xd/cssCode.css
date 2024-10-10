@@ -37,42 +37,46 @@ section {
 h1, h2 {
     color: #4a1f83;
 }
-
+/* Tamaño de los cuadros de los servicios */
 .servicio {
     position: relative;
-    overflow: hidden;
     background-color: white;
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    height: 400px; /* Ajusta esta altura según tus necesidades */
+    height: 100px;
+    overflow: hidden; /* Cambiado de visible a hidden */
+    transition: height 0.3s ease;
 }
 
-.servicio-contenido, .servicio-imagenes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 3s ease;
+.servicio-contenido {
+    position: relative;
+    z-index: 2;
 }
 
 .servicio-imagenes {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 5%;
+    width: 40%;
+    height: 100%;
     opacity: 0;
+    transition: opacity 1s ease;
 }
 
 .servicio-imagen {
-    max-width: 30%;
-    max-height: 80%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-#alojamiento-servicio:hover .servicio-contenido {
-    opacity: 0;
+#alojamiento-servicio {
+    transition: height 0.3s ease;
+}
+
+#alojamiento-servicio:hover {
+    height: 150px; /* Ajusta este valor según necesites */
 }
 
 #alojamiento-servicio:hover .servicio-imagenes {
@@ -91,7 +95,7 @@ input, select, textarea {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #4a1f83;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -100,11 +104,11 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #6a3fa3;
 }
 
 footer {
-    background-color: #4CAF50;
+    background-color: #4a1f83;
     color: white;
     text-align: center;
     padding: 1rem;
